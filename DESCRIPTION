@@ -1,0 +1,22 @@
+Package: syberiaMungebits2
+Type: Package
+Title: syberiaMungebits2 (http://github.com/syberia/syberiaMungebits2)
+Description: Common feature engineering preparation using mungebits2.
+Version: 0.1.0
+Author: Robert Krzyzanowski <rob@syberia.io>
+Maintainer: Robert Krzyzanowski <rob@syberia.io>
+Authors@R: c(person("Robert", "Krzyzanowski",
+    email = "technoguyrob@gmail.com", role = c("aut", "cre")))
+Depends:
+    R (>= 3.0.1)
+License: MIT
+LazyData: true
+Imports:
+    mungebits2
+Suggests:
+    knitr,
+    microbenchmark,
+    testthat
+Remotes:
+    syberia/mungebits2
+Roxygen: list(wrap = FALSE)
