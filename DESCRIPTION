@@ -22,5 +22,6 @@ Roxygen: list(wrap = FALSE)
 Collate:
     'mungebit_template.R'
     'drop_percent_missing.R'
+    'drop_single_value_variables.R'
     'package.syberiaMungebits2.R'
     'pending.R'

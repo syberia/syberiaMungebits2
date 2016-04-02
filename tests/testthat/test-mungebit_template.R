@@ -17,3 +17,4 @@ test_that("it can create a new mungebit from a simple template with column trans
   expect_is(generator(), "mungebit") 
   expect_is(generator()$train_function(), "column_transformation")
 })
+
