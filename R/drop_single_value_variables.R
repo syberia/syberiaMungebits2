@@ -1,3 +1,6 @@
+#' @include mungebit_template.R
+NULL
+
 #' Drop features with only one non-NA value.
 #'
 #' @name drop_single_value_variables

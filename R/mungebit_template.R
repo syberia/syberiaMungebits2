@@ -20,7 +20,6 @@
 mungebit_template <- function(expression) {
   inputs <- new.env(parent = baseenv())
   eval(substitute(expression), envir = inputs)
-  mungebits2::mungebit$new(inputs$train, inputs$predict)
   
   train_function <- inputs$train
   environment(train_function) <- globalenv()
@@ -35,7 +34,7 @@ mungebit_template <- function(expression) {
   generator <- function() { }
   environment(generator) <- list2env(
     list(train_function = train_function, predict_function = predict_function),
-    envir = globalenv()
+    parent = globalenv()
   )
   body(generator) <- quote({
     mungebits2::mungebit$new(train_function, predict_function)
