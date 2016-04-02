@@ -2,4 +2,7 @@
 
 export(drop_percent_missing)
 export(drop_single_value_variables)
+export(drop_variables)
+export(new_variable)
+export(renamer)
 import(mungebits2)
