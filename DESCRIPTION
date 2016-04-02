@@ -28,3 +28,4 @@ Collate:
     'package.syberiaMungebits2.R'
     'pending.R'
     'renamer.R'
+    'restore_categorical_variables.R'
