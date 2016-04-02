@@ -24,6 +24,7 @@ Collate:
     'drop_percent_missing.R'
     'drop_single_value_variables.R'
     'drop_variables.R'
+    'new_variable.R'
     'package.syberiaMungebits2.R'
     'pending.R'
     'renamer.R'

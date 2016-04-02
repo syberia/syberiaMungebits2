@@ -7,7 +7,6 @@ run_test <- function(switch = 0) {
 
   mb <- drop_single_value_variables()
   newdata <- mb$run(dataframe)
-  browser()
   if (switch == 0) {
     expect_equal(newdata, dataframe[2])
   } else {
