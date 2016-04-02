@@ -17,6 +17,10 @@ Suggests:
     knitr,
     microbenchmark,
     testthat
-Remotes:
-    syberia/mungebits2
+Remotes: syberia/mungebits2
 Roxygen: list(wrap = FALSE)
+Collate:
+    'mungebit_template.R'
+    'drop_percent_missing.R'
+    'package.syberiaMungebits2.R'
+    'pending.R'
