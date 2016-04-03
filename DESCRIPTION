@@ -36,5 +36,6 @@ Collate:
     'package.syberiaMungebits2.R'
     'remove_outliers.R'
     'renamer.R'
+    'replace_variable.R'
     'restore_categorical_variables.R'
     'truncator.R'
