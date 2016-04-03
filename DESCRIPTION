@@ -41,3 +41,4 @@ Collate:
     'select_rows.R'
     'select_variables.R'
     'truncator.R'
+    'value_replacer.R'
