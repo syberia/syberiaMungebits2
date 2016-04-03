@@ -14,10 +14,10 @@ drop_single_value_variables <- mungebit_template({
   train <- function(x) {
     if (length(x) == 0 || (tmp <- length(unique(x))) == 1 ||
         (tmp == 2 && any(is.na(x)))) {
-      input$dropped <<- TRUE
+      input$dropped <- TRUE
       NULL
     } else {
-      input$dropped <<- FALSE
+      input$dropped <- FALSE
       x 
     }
   }
