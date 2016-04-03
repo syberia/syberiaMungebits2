@@ -29,6 +29,7 @@ Collate:
     'drop_percent_missing.R'
     'drop_single_value_variables.R'
     'drop_variables.R'
+    'imputer.R'
     'new_variable.R'
     'numeric_to_factor.R'
     'package.syberiaMungebits2.R'
