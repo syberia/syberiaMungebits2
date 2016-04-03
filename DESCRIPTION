@@ -38,4 +38,5 @@ Collate:
     'renamer.R'
     'replace_variable.R'
     'restore_categorical_variables.R'
+    'select_rows.R'
     'truncator.R'

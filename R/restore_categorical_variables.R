@@ -1,3 +1,6 @@
+#' @include mungebit_template.R
+NULL
+
 #' Restores categorical variables, allowing you to predict.
 #'
 #' @name restore_categorical_variables

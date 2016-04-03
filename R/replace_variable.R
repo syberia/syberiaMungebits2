@@ -1,3 +1,6 @@
+#' @include mungebit_template.R
+NULL
+
 #' Replaces a variable in the dataframe.
 #'
 #' @name replace_variable
