@@ -39,6 +39,7 @@ mungebit_template <- function(expression) {
   body(generator) <- quote({
     mungebits2::mungebit$new(train_function, predict_function)
   })
+  class(generator) <- c("mungebit_generator", class(generator))
   generator
 }
 

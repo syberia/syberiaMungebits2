@@ -42,3 +42,4 @@ Collate:
     'select_variables.R'
     'truncator.R'
     'value_replacer.R'
+RoxygenNote: 5.0.1.9000
