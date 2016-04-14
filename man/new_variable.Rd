@@ -20,10 +20,11 @@ Does not return anything, but modifies-in-place the dataframe to have that new v
 Wrapper around the default multi_column_transformation mungebit to make new variables.
 }
 \examples{
-\dontrun{
-  new_variable(iris, function(Sepal.Width, Sepal.Length) Sepal.Width*2 + Sepal.Length*2, 'Sepal.Perimeter')
-  new_variable(iris, iris$Sepal.Width, 'Sepal.Width2')
+new_variable()$run(iris, function(Sepal.Width, Sepal.Length) Sepal.Width*2 + Sepal.Length*2, 'Sepal.Perimeter')
+#TODO: (RK) Fix broken example.
+#new_variable()$run(iris, iris$Sepal.Width, 'Sepal.Width2')
 
+\dontrun{
   # Usage in a Syberia file
   list("Make new variable" = list(
     new_variable,

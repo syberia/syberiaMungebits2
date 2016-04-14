@@ -19,8 +19,8 @@ Replace arbitrary values in your data
 \examples{
 \dontrun{
 # replace A, B, D with 1 and NA with 0.
-value_replacer(c("A", "B", NA, "D"), list(list(c("A","B","D"), 1), list(NA, 0)))
-value_replacer(c("A", "B", NA, "D"), list(A = 1, B = 1, D = 1, list(NA, 0)))
+value_replacer()$run(c("A", "B", NA, "D"), list(list(c("A","B","D"), 1), list(NA, 0)))
+value_replacer()$run(c("A", "B", NA, "D"), list(A = 1, B = 1, D = 1, list(NA, 0)))
 }
 }
 

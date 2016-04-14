@@ -14,7 +14,7 @@ Rename columns in a dataframe
 }
 \examples{
 \dontrun{
-  renamer(iris, list('Sepal.Length' = 'seplen', 'Sepal.Width' = 'sepwid'))
+  renamer()$run(iris, list('Sepal.Length' = 'seplen', 'Sepal.Width' = 'sepwid'))
 }
 }
 

@@ -14,8 +14,8 @@
 Select variables in a dataframe.
 }
 \examples{
-df <- iris; select_variables(df, 1) # Select only first variable
-df <- iris; select_variables(df, c('Sepal.Length', 'Petal.Length'))
-df <- iris; select_variables(df, c(TRUE,TRUE,FALSE,FALSE,TRUE)) # Exclude cols 3 and 4
+df <- iris; select_variables()$run(df, 1) # Select only first variable
+df <- iris; select_variables()$run(df, c('Sepal.Length', 'Petal.Length'))
+df <- iris; select_variables()$run(df, c(TRUE,TRUE,FALSE,FALSE,TRUE)) # Exclude cols 3 and 4
 }
 
