@@ -13,6 +13,7 @@ License: MIT
 LazyData: true
 Imports:
     mungebits2,
+    stagerunner,
     Rcpp
 LinkingTo: Rcpp
 Suggests:
@@ -21,7 +22,8 @@ Suggests:
     microbenchmark,
     testthat
 Remotes:
-    syberia/mungebits2
+    syberia/mungebits2,
+    syberia/stagerunner
 Roxygen: list(wrap = FALSE)
 Collate:
     'RcppExports.R'
