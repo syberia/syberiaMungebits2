@@ -5,16 +5,16 @@
 
 using namespace Rcpp;
 
-// numeric_to_factor
-CharacterVector numeric_to_factor(NumericVector num, CharacterVector levs, bool na_to_missing);
-RcppExport SEXP syberiaMungebits2_numeric_to_factor(SEXP numSEXP, SEXP levsSEXP, SEXP na_to_missingSEXP) {
+// numeric_to_factor_cpp
+CharacterVector numeric_to_factor_cpp(NumericVector num, CharacterVector levs, bool na_to_missing);
+RcppExport SEXP syberiaMungebits2_numeric_to_factor_cpp(SEXP numSEXP, SEXP levsSEXP, SEXP na_to_missingSEXP) {
 BEGIN_RCPP
     Rcpp::RObject __result;
     Rcpp::RNGScope __rngScope;
     Rcpp::traits::input_parameter< NumericVector >::type num(numSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type levs(levsSEXP);
     Rcpp::traits::input_parameter< bool >::type na_to_missing(na_to_missingSEXP);
-    __result = Rcpp::wrap(numeric_to_factor(num, levs, na_to_missing));
+    __result = Rcpp::wrap(numeric_to_factor_cpp(num, levs, na_to_missing));
     return __result;
 END_RCPP
 }

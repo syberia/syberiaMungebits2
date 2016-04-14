@@ -17,7 +17,7 @@ bool epsilon_compare(float a, float b) {
   return fabs(a - b) < std::numeric_limits<double>::epsilon();
 }
 // [[Rcpp::export]]
-CharacterVector numeric_to_factor(NumericVector num,
+CharacterVector numeric_to_factor_cpp(NumericVector num,
     CharacterVector levs, bool na_to_missing = true) {
   CharacterVector charnums = CharacterVector(num.size());
   const int nlevs = levs.size();
