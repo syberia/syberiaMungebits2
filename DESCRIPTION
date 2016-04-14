@@ -20,7 +20,8 @@ Suggests:
     knitr,
     microbenchmark,
     testthat
-Remotes: syberia/mungebits2
+Remotes:
+    syberia/mungebits2
 Roxygen: list(wrap = FALSE)
 Collate:
     'RcppExports.R'

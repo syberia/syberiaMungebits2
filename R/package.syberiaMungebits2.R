@@ -12,7 +12,7 @@ NULL
 #' a new mungebit when called.
 #'
 #' @param obj ANY. An R object to test.
-#' @examples
+#' @export
 #' @return TRUE or FALSE according as \code{obj} has the
 #'   class \code{"mungebit_generator"}.
 is.mungebit_generator <- function(obj) {
