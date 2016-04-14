@@ -21,10 +21,12 @@ Suggests:
     knitr,
     microbenchmark,
     testthat
-Remotes: syberia/mungebits2,
+Remotes:
+    syberia/mungebits2,
     syberia/stagerunner
 Roxygen: list(wrap = FALSE)
 Collate:
+    'RcppExports.R'
     'mungebit_template.R'
     'discretizer.R'
     'drop_percent_missing.R'
