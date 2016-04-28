@@ -1,32 +1,37 @@
-sudo: required
 language: c
-before_install:
-- curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-- chmod 755 ./travis-tool.sh
-- "./travis-tool.sh bootstrap"
-install:
-- "./travis-tool.sh install_github syberia/stagerunner"
-- "./travis-tool.sh install_deps"
-- "./travis-tool.sh install_r testthat"
-- "./travis-tool.sh install_github jimhester/covr"
-script: "./travis-tool.sh run_tests"
-after_failure:
-- "./travis-tool.sh dump_logs"
+sudo: false
+addons:
+  apt:
+    sources:
+      - r-packages-precise
+    packages:
+      - r-base-dev
+      - r-recommended
+      - pandoc
+  postgresql: "9.4"
+env:
+  - R_LIBS_USER=~/.R/library
+cache:
+  directories:
+    $R_LIBS_USER
+before_script:
+  - mkdir -p "$R_LIBS_USER"
+  - Rscript -e 'if (length(find.package("devtools", quiet = TRUE)) == 0L) { install.packages("devtools", repos = "http://cran.rstudio.com") }'
+  - Rscript -e 'if (!require("roxygen")) devtools::install_github("klutometis/roxygen")'
+  - Rscript -e 'if (!require("testthat")) devtools::install_github("hadley/testthat")'
+  - Rscript -e 'if (!require("testthatsomemore")) devtools::install_github("robertzk/testthatsomemore")'
+  - Rscript -e 'if (!require("covr")) devtools::install_github("kirillseva/covr")'
+  - Rscript -e 'devtools::install_deps(repos = "http://cran.rstudio.com", dependencies = TRUE)'
+script:
+  - Rscript -e 'res <- try(devtools::check()); quit(save = "no", status = if (length(res$errors) == 0) { 0 } else { 1 }, runLast = FALSE)'
 after_success:
-- Rscript -e 'library(covr);coveralls()'
+  - Rscript -e 'library(covr);coveralls()'
 notifications:
-  email:
-    on_success: change
-    on_failure: change
   hipchat:
     rooms:
-      secure: REuJ8V4CXsWxdr5DotDUbOe2n2WHrG6hPqEVpH3g4BR+WjJ/DojmUKXX5uyKJlxZZvCiDFmdXAWcdo15PNve5u4M8hFteY+JVSCiY7j2vw/NX3JifJQmvldt2SbX/9Lg6HvIamzyd9gwmtLFN0G+DOy4jFF5CZmfLGohFpIEtKuxWeoC4LrX9LeGvAslufuLOeenJQKIigXfepNZED7FgEH6Hx3W/2OcZHeJ/VWgyuskOGgJVLJMys3bt6x/ZC/19BTIAOCdftTolYn4BwXLYCJBOfktJnh0RFxHQLMUShOEtW6x8thxZbUdoZpUBObJ9N5lRPlfv1OeKoyvFp0qhu9eEiXPjbQuJcoG7k0Lp+1ekJ0EPCzqgLAMPV1d86CuKTfDN7xoETcBA6OoWYmGdRJgcgG6qlb2nJ2uHM8CmEqH15VBc0F4/NW26eYdvSNx7g5aY786TgfpdVC6G9hGfSlcMqgliT2GsG1ZlucgX+4oU1NCLx6mu5+fn9JP6dbSsRDwqpRttAZ7Y7E/Jz8AJ8Xe+IHnBry6qVI1HWBikvyC/RVemGXc1fYfAZ5nVXYG9qMgG55BPQuV3H8yHD/rKmNhPCZXYY4zA8k6bkM0dj1WcK/sCWQi0bNufyQMOYwQ+Tk4Ce7Y+MB1mABRlVqwVyVbtn07UpdkFde9+/axrFE=
+      secure: C/QSVCJr0J4eLU1IF+yFOc0Az5I2oZC/F61b1Gb3OHm2ZtLTTJY+tTD1xO0PMp+FRdDLkV9PpFWei3C+tPOMVQrzHgpB9YL3RCsHbghzH3C9O7eexQMEON1xh4cI+09F+N6CisIdeQYsUEaePZ2/sOGjo1tcBdwxSjKttGslZlw=
     on_success: change
     on_failure: change
     template:
     - "%{repository}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}
       | Details: %{build_url} | Changes: %{compare_url}"
-env:
-- global:
-  - WARNINGS_ARE_ERRORS=1
-  - _R_CHECK_FORCE_SUGGESTS_=0
