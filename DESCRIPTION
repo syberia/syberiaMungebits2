@@ -12,7 +12,7 @@ Depends:
 License: MIT
 LazyData: true
 Imports:
-    mungebits2 (>= 0.1.0.9006),
+    mungebits2 (>= 0.1.0.9008),
     stagerunner,
     Rcpp
 LinkingTo: Rcpp
@@ -21,7 +21,7 @@ Suggests:
     knitr,
     microbenchmark,
     testthat
-Remotes: syberia/mungebits2@0.1.0.9006,
+Remotes: syberia/mungebits2@0.1.0.9008,
     syberia/stagerunner
 Roxygen: list(wrap = FALSE)
 Collate:
