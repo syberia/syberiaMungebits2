@@ -12,10 +12,12 @@ NULL
 #' @param old_variables character. The names of the variables needed to make the new_variable.
 #' @param new_variable character. The name of the desired new variable.
 #' @return Does not return anything, but modifies-in-place the dataframe to have that new variable.
-#' @examples \dontrun{
-#'   new_variable(iris, function(Sepal.Width, Sepal.Length) Sepal.Width*2 + Sepal.Length*2, 'Sepal.Perimeter')
-#'   new_variable(iris, iris$Sepal.Width, 'Sepal.Width2')
+#' @examples 
+#' new_variable()$run(iris, function(Sepal.Width, Sepal.Length) Sepal.Width*2 + Sepal.Length*2, 'Sepal.Perimeter')
+#' #TODO: (RK) Fix broken example.
+#' #new_variable()$run(iris, iris$Sepal.Width, 'Sepal.Width2')
 #'
+#' \dontrun{
 #'   # Usage in a Syberia file
 #'   list("Make new variable" = list(
 #'     new_variable,

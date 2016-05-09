@@ -9,7 +9,7 @@ NULL
 #'    respective values new names.
 #' @export
 #' @examples \dontrun{
-#'   renamer(iris, list('Sepal.Length' = 'seplen', 'Sepal.Width' = 'sepwid'))
+#'   renamer()$run(iris, list('Sepal.Length' = 'seplen', 'Sepal.Width' = 'sepwid'))
 #' }
 NULL
 

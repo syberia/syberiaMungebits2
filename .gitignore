@@ -1,3 +1,4 @@
+R/Rcpp*
 src/*.so
 src/*.o
 src/symbols.rds

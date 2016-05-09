@@ -17,10 +17,10 @@ NULL
 #' @param ... additional arguments to \code{rows} is that parameter is a function. 
 #' @export
 #' @examples \dontrun{
-#' select_rows(iris, 1:10) # Select only first ten rows
-#' select_rows(iris, c(TRUE,FALSE)) # Select only odd rows
+#' select_rows()$run(iris, 1:10) # Select only first ten rows
+#' select_rows()$run(iris, c(TRUE,FALSE)) # Select only odd rows
 #' iris2 <- iris; rownames(iris2) <- paste0("row", 1:nrow(iris2))
-#' select_rows(iris, c("row10", "row51")) # Select rows by name
+#' select_rows()$run(iris, c("row10", "row51")) # Select rows by name
 #' }
 select_rows <- mungebit_template({
   train <- predict <- function(dataframe, rows, whole = FALSE, ...) {

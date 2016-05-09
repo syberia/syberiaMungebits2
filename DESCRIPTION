@@ -2,7 +2,7 @@ Package: syberiaMungebits2
 Type: Package
 Title: syberiaMungebits2 (http://github.com/syberia/syberiaMungebits2)
 Description: Common feature engineering preparation using mungebits2.
-Version: 0.1.1.9000
+Version: 0.1.2.9000
 Author: Robert Krzyzanowski <rob@syberia.io>
 Maintainer: Robert Krzyzanowski <rob@syberia.io>
 Authors@R: c(person("Robert", "Krzyzanowski",
@@ -12,7 +12,8 @@ Depends:
 License: MIT
 LazyData: true
 Imports:
-    mungebits2,
+    mungebits2 (>= 0.1.0.9008),
+    stagerunner,
     Rcpp
 LinkingTo: Rcpp
 Suggests:
@@ -20,7 +21,8 @@ Suggests:
     knitr,
     microbenchmark,
     testthat
-Remotes: syberia/mungebits2
+Remotes: syberia/mungebits2@0.1.0.9008,
+    syberia/stagerunner
 Roxygen: list(wrap = FALSE)
 Collate:
     'RcppExports.R'
@@ -42,3 +44,4 @@ Collate:
     'select_variables.R'
     'truncator.R'
     'value_replacer.R'
+RoxygenNote: 5.0.1.9000
