@@ -9,7 +9,7 @@ addons:
       - r-recommended
       - pandoc
 env:
-  global:
+  - global:
     - TRAVIS=true
     - R_LIBS_USER=~/.R/library
 cache:
@@ -32,4 +32,5 @@ notifications:
   email:
     on_success: change
     on_failure: change
-after_success: "Rscript -e 'library(covr);coveralls()'"
+after_success:
+  - Rscript -e 'library(covr);coveralls()'
