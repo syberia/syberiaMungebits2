@@ -5,21 +5,22 @@ before_install:
 - chmod 755 ./travis-tool.sh
 - "./travis-tool.sh bootstrap"
 install:
-- "./travis-tool.sh install_github syberia/stagerunner robertzk/mungebits2 robertzk/testthatsomemore kirillseva/covr"
+- "./travis-tool.sh install_github syberia/stagerunner robertzk/mungebits2 robertzk/testthatsomemore
+  kirillseva/covr"
 - "./travis-tool.sh install_deps"
 - "./travis-tool.sh install_r testthat microbenchmark"
 script: "./travis-tool.sh run_tests"
 after_failure:
 - "./travis-tool.sh dump_logs"
 after_success:
-  - "Rscript -e 'library(covr);coveralls()'"
+- Rscript -e 'library(covr);coveralls()'
 notifications:
   email:
     on_success: change
     on_failure: change
   hipchat:
     rooms:
-      secure: C/QSVCJr0J4eLU1IF+yFOc0Az5I2oZC/F61b1Gb3OHm2ZtLTTJY+tTD1xO0PMp+FRdDLkV9PpFWei3C+tPOMVQrzHgpB9YL3RCsHbghzH3C9O7eexQMEON1xh4cI+09F+N6CisIdeQYsUEaePZ2/sOGjo1tcBdwxSjKttGslZlw=
+      secure: PmujI43iOA+3f/fOU7oEfDQdJw7IGJcMst+rOQODrtT0Y1x/ijxAVMCLX7AyYqGjwG15HrO8qpuT7UUhwjyN29IGr5fbjXIWwPKpoFq6Vi9YI2GDtU/Xg9mLa5GaME7xEK/o81lG4I45il/kbwlIx0gBrXY/u3RaJgtJWg/CebQrHAw8Xq/ci6lS0Fmi9JQOYZADZv2G5t0BZIFdtsJo6+1aKXEkPf58Wzhw6z79trSn46Nx77ugqubSjOYvC7XledFl8rfO3Al8UJ13SwQ+Rv3nRn5EUW108vgRR0ErFKEstA4DvjRC+P6rjFQfS6MUq56+Ym/r9ekYu+eXu3tKw79ke2g9rwYcgyEnCuti19X8OjwfzkU9xJYPtm7np0MkqE9j9VFoxob73ZDQqEW6mTAbPKLnrbczKkeO+xoVvFtubvhN61XWVN8nNwz4oT1afOYbjguonFVANMZOWLwkXtQgkgdS4hFgai/J4z2BksiTJRfMxXd39e6CkUB39RSPpQGWs/Mwj1lgLYsFKFrWTbTW0T7kDpgI1DVenN/VqYQu+m8vyMJ0xRrcUSRnsFM/xuz7EEUQ4hKwyI0P+SvMbXt+Cu4InulBhOIM/Q5wMrn3QkS+EFE9sjN6kSsd3guzhsTOkqmCaRqBTDPMXmo5HDpGX1KQKXydOUrF+QJK4SY=
     on_success: change
     on_failure: change
     template:
@@ -27,6 +28,6 @@ notifications:
       | Details: %{build_url} | Changes: %{compare_url}"
 sudo: true
 env:
-  - global:
-    - WARNINGS_ARE_ERRORS=1
-    - _R_CHECK_FORCE_SUGGESTS_=0
+- global:
+  - WARNINGS_ARE_ERRORS=1
+  - _R_CHECK_FORCE_SUGGESTS_=0
