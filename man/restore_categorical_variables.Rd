@@ -9,4 +9,3 @@
 \description{
 Restores categorical variables, allowing you to predict.
 }
-

@@ -29,7 +29,7 @@ NULL
 #' @param missing_level character. Any values that were \code{NA} prior to
 #'    discretization will be replaced with this level. If set to \code{NULL},
 #'    then the \code{NA}s will remain. The default is \code{"Missing"}.
-#' @param ... additional arguments to pass to arules::discretize.
+#' @param ... additional arguments to pass to arules_discretize.
 #' @export
 NULL
 
@@ -59,7 +59,7 @@ discretizer_fn <- function(column, name,
     mode_corrected <- FALSE
     if (!is.null(category_range)) {
       for(i in category_range) {
-        discretized_column <- try(suppressWarnings(arules::discretize(column,
+        discretized_column <- try(suppressWarnings(arules_discretize(column,
           digits = syberiaMungebits2:::MAX_DISCRETIZATION_DIGITS, method = 'frequency',
           categories = i, ...)))
         if (inherits(discretized_column, 'try-error')) next
@@ -79,12 +79,12 @@ discretizer_fn <- function(column, name,
       }
     }
     if (!mode_corrected) {
-      discretized_column <- try(arules::discretize(column,
+      discretized_column <- try(arules_discretize(column,
         digits = syberiaMungebits2:::MAX_DISCRETIZATION_DIGITS,
         method = 'frequency', categories = granularity, ...))
       }
   } else {
-    discretized_column <- try(arules::discretize(column,
+    discretized_column <- try(arules_discretize(column,
       digits = syberiaMungebits2:::MAX_DISCRETIZATION_DIGITS,
       method = 'frequency', categories = granularity, ...))
   }

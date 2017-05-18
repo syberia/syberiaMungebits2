@@ -38,9 +38,8 @@ this many unique values will not get discretized. Default is
 discretization will be replaced with this level. If set to \code{NULL},
 then the \code{NA}s will remain. The default is \code{"Missing"}.}
 
-\item{...}{additional arguments to pass to arules::discretize.}
+\item{...}{additional arguments to pass to arules_discretize.}
 }
 \description{
 Discretizer function
 }
-

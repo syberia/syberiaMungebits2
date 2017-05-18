@@ -17,4 +17,3 @@ TRUE or FALSE according as \code{obj} has the
 Mungebit generators are arity-0 functions that generate
 a new mungebit when called.
 }
-

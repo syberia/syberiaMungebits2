@@ -9,4 +9,3 @@
 \description{
 i.e trunc.dig(5.732 , digits = 1) => 5.7
 }
-

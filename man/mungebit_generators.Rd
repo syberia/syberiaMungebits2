@@ -12,4 +12,3 @@ A named list of mungebit generators exposed by this package, invisibly.
 \description{
 All mungebit generators exported by the syberiaMungebits2 package.
 }
-

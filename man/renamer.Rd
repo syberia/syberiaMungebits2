@@ -17,4 +17,3 @@ Rename columns in a dataframe
   renamer()$run(iris, list('Sepal.Length' = 'seplen', 'Sepal.Width' = 'sepwid'))
 }
 }
-
