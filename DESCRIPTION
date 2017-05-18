@@ -2,7 +2,7 @@ Package: syberiaMungebits2
 Type: Package
 Title: syberiaMungebits2 (http://github.com/syberia/syberiaMungebits2)
 Description: Common feature engineering preparation using mungebits2.
-Version: 0.1.2.9001
+Version: 0.1.2.9002
 Author: Robert Krzyzanowski <rob@syberia.io>
 Maintainer: Robert Krzyzanowski <rob@syberia.io>
 Authors@R: c(person("Robert", "Krzyzanowski",
@@ -17,7 +17,6 @@ Imports:
     Rcpp
 LinkingTo: Rcpp
 Suggests:
-    arules,
     knitr,
     microbenchmark,
     testthat
