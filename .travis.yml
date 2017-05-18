@@ -28,9 +28,9 @@ before_script:
   - Rscript -e 'if (!require("roxygen2")) install.packages("roxygen2", repos = "http://cran.rstudio.com/")'
   - Rscript -e 'if (!require("testthat")) install.packages("testthat", repos = "http://cran.rstudio.com/")'
 script: "Rscript -e 'quit(save = "no", status = if (sum(as.data.frame(devtools::test())$failed) == 0) { 0 } else { 1 }, runLast = FALSE)'"
+after_success:
+  - Rscript -e 'library(covr);coveralls()'
 notifications:
   email:
     on_success: change
     on_failure: change
-after_success:
-  - Rscript -e 'library(covr);coveralls()'
