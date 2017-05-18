@@ -5,7 +5,7 @@ before_install:
 - chmod 755 ./travis-tool.sh
 - "./travis-tool.sh bootstrap"
 install:
-- "./travis-tool.sh install_github syberia/stagerunner robertzk/mungebits robertzk/testthatsomemore kirillseva/covr syberia/mungebits2"
+- "./travis-tool.sh install_github syberia/stagerunner robertzk/mungebits2 robertzk/testthatsomemore kirillseva/covr"
 - "./travis-tool.sh install_deps"
 - "./travis-tool.sh install_r testthat microbenchmark"
 script: "./travis-tool.sh run_tests"
@@ -30,4 +30,3 @@ env:
   - global:
     - WARNINGS_ARE_ERRORS=1
     - _R_CHECK_FORCE_SUGGESTS_=0
-
