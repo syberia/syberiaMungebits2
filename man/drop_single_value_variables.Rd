@@ -6,4 +6,3 @@
 \description{
 Drop features with only one non-NA value.
 }
-

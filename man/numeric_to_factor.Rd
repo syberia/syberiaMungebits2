@@ -17,4 +17,3 @@ numeric_to_factor(num, levs, na.to.missing = TRUE)
 TODO: Make this faster
 }
 \keyword{internal}
-

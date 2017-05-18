@@ -33,4 +33,3 @@ iris2 <- iris; rownames(iris2) <- paste0("row", 1:nrow(iris2))
 select_rows()$run(iris, c("row10", "row51")) # Select rows by name
 }
 }
-

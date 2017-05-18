@@ -29,4 +29,3 @@ The expression passed in can specify local variables \code{train} or
 mungebit, respectively, as well as set \code{column_transformation} 
 to \code{TRUE} to specify they are column transformations.
 }
-

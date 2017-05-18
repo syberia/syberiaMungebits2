@@ -16,4 +16,3 @@ character and factor columns.}
 \description{
 Drop columns with over a certain percent missing.
 }
-

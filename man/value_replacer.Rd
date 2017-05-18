@@ -23,4 +23,3 @@ value_replacer()$run(c("A", "B", NA, "D"), list(list(c("A","B","D"), 1), list(NA
 value_replacer()$run(c("A", "B", NA, "D"), list(A = 1, B = 1, D = 1, list(NA, 0)))
 }
 }
-

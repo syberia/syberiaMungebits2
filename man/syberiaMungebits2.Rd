@@ -8,4 +8,3 @@
 \description{
 Common feature engineering preparation using mungebits2.
 }
-

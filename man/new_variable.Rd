@@ -33,4 +33,3 @@ new_variable()$run(iris, function(Sepal.Width, Sepal.Length) Sepal.Width*2 + Sep
   ))
 }
 }
-
