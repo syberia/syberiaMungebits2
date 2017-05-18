@@ -1,22 +1,35 @@
 language: c
-before_install:
-- curl -OL http://raw.github.com/craigcitro/r-travis/master/scripts/travis-tool.sh
-- chmod 755 ./travis-tool.sh
-- "./travis-tool.sh bootstrap"
-install:
-- "./travis-tool.sh install_github syberia/stagerunner robertzk/mungebits robertzk/testthatsomemore kirillseva/covr"
-- "./travis-tool.sh github_package robertzk/testthatsomemore"
-- "./travis-tool.sh install_deps"
-- "./travis-tool.sh github_package jimhester/covr@e3e137fdf27b6e0dfba2f8d8f25b616b1fb81db9"
-- "./travis-tool.sh github_package robertzk/objectdiff"
-- "./travis-tool.sh github_package hadley/testthat"
-- "./travis-tool.sh install_r microbenchmark"
-- "./travis-tool.sh install_r R6"
-script: "./travis-tool.sh run_tests"
-after_failure:
-- "./travis-tool.sh dump_logs"
-sudo: true
+sudo: false
+addons:
+  apt:
+    sources:
+      - r-packages-precise
+    packages:
+      - r-base-dev
+      - r-recommended
+      - pandoc
 env:
   - global:
-      - WARNINGS_ARE_ERRORS=1
-          - _R_CHECK_FORCE_SUGGESTS_=0
+    - TRAVIS=true
+    - R_LIBS_USER=~/.R/library
+cache:
+  directories:
+    ~/.R
+before_script:
+  - rm -rf "/home/travis/.R/.syberia"
+  - mkdir -p "$R_LIBS_USER"
+  - Rscript -e 'if (!require("devtools")) install.packages("devtools", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("plyr")) install.packages("plyr", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("pryr")) install.packages("pryr", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("XML")) install.packages("XML", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("httr")) install.packages("httr", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("yaml")) install.packages("yaml", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("digest")) install.packages("digest", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("crayon")) install.packages("crayon", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("roxygen2")) install.packages("roxygen2", repos = "http://cran.rstudio.com/")'
+  - Rscript -e 'if (!require("testthat")) install.packages("testthat", repos = "http://cran.rstudio.com/")'
+script: "Rscript -e 'quit(save = "no", status = if (sum(as.data.frame(devtools::test())$failed) == 0) { 0 } else { 1 }, runLast = FALSE)'"
+notifications:
+  email:
+    on_success: change
+    on_failure: change
