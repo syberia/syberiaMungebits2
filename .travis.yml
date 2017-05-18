@@ -9,7 +9,8 @@ install:
 - "./travis-tool.sh install_deps"
 - "./travis-tool.sh github_package jimhester/covr@e3e137fdf27b6e0dfba2f8d8f25b616b1fb81db9"
 - "./travis-tool.sh github_package robertzk/objectdiff"
-- "./travis-tool.sh install_r testthat microbenchmark"
+- "./travis-tool.sh github_package hadley/testthat"
+- "./travis-tool.sh install_r microbenchmark"
 - "./travis-tool.sh install_r R6"
 script: "./travis-tool.sh run_tests"
 after_failure:
