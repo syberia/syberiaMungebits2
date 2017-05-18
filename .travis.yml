@@ -23,7 +23,7 @@ before_script:
   - Rscript -e 'if (!require("covr")) devtools::install_github("kirillseva/covr")'
   - Rscript -e 'devtools::install_deps(repos = "http://cran.rstudio.com", dependencies = TRUE)'
 script:
-  - Rscript -e 'res <- devtools::test(); quit(save = "no", status = if (sum(as.data.frame(devtools::test())$failed) == 0) { 0 } else { 1 }, runLast = FALSE)'
+  - Rscript -e 'quit(save = "no", status = if (sum(as.data.frame(devtools::test())$failed) == 0) { 0 } else { 1 }, runLast = FALSE)'
 after_success:
   - Rscript -e 'library(covr);coveralls()'
 notifications:
