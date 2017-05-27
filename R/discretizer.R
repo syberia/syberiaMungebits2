@@ -1,4 +1,4 @@
-#' @include mungebit_template.R
+#' @include mungebit_template.R package_imports.R
 NULL
 
 #' Discretizer function
