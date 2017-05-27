@@ -25,6 +25,7 @@ Remotes: syberia/mungebits2@0.1.0.9008,
 Roxygen: list(wrap = FALSE)
 Collate: 
     'RcppExports.R'
+    'package_imports.R'
     'mungebit_template.R'
     'discretizer.R'
     'drop_percent_missing.R'
@@ -35,7 +36,6 @@ Collate:
     'numeric_to_factor.R'
     'orderer.R'
     'package.syberiaMungebits2.R'
-    'package_imports.R'
     'remove_outliers.R'
     'renamer.R'
     'replace_variable.R'
